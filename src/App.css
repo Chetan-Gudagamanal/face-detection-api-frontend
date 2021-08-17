@@ -2,37 +2,158 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Recursive:wght@500&display=swap');
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  min-height: 10vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: calc(15px + 2vmin);
+  color: rgb(250, 237, 212);
+  font-family: 'Archivo Black', sans-serif;
+}
+
+.App {
+  text-align: center;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Monoton&family=Recursive:wght@500&display=swap');
+.heading-text{
+  font-family: 'Monoton', cursive;
+  font-size: 1.5em;
+  color: #3a1666;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Recursive:wght@500&display=swap');
+.welcome_msg{
+  font-family: 'Recursive', sans-serif;
+  font-size: x-large;
+}
+
+.face_detect_msg{
+  font-family: 'Recursive', sans-serif;
+  font-size: large;
+}
+
+.MyForm {
+  background: rgb(14, 16, 28, 0.6);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
   color: white;
+  padding: 1em;
+  margin: 3em;
+}
+select,
+input {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  border-radius: 4px;
+  border: 1px solid white;
+  padding: 10px 15px;
+  margin-bottom: 15px;
+  font-size: 14px;
 }
 
-.App-link {
-  color: #61dafb;
+input[type="submit"],
+.button {
+  background: #ec5990;
+  color: white;
+  text-transform: uppercase;
+  border: none;
+  margin-top: 20px;
+  padding: 20px;
+  font-size: 16px;
+  font-weight: 100;
+  letter-spacing: 10px;
+  display: block;
+  appearance: none;
+  border-radius: 4px;
+  width: 100%;
+  font-weight: lighter;
+}
+input[type="submit"]:active {
+  transition: 0.3s all;
+  transform: translateY(3px);
+  border: 1px solid transparent;
+  opacity: 0.8;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+input[type="submit"]:hover {
+  background: #bf1650;
+}
+
+.imageForm{
+    padding: 1em;
+    margin: 0;
+    background-color: rgba(131, 99, 30, 0.2);
+    background-size: 56px 56px;
+    background-image:
+    linear-gradient(
+        135deg,
+        transparent 55%,
+        rgba(227, 253, 132, 0.2) 55%
+    ),
+     radial-gradient(
+        transparent 6px,
+        rgb(255, 255, 25,0.2) 6px,
+        rgb(255, 255, 25,0.2) 10px,
+        transparent 10px,
+        transparent 15px,
+        rgb(255, 255, 25,0.2) 15px,
+        rgb(255, 255, 25,0.2) 19px,
+        transparent 19px,
+        transparent 24px,
+        rgb(255, 255, 25,0.2) 24px,
+        rgb(255, 255, 25,0.2) 28px,
+        transparent 28px
+    );
+
+}
+
+.image_section{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  /* display: block; */
+  margin: 0 auto;
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.image_area{
+  position: absolute;
+  margin: auto;
+}
+
+.inputField{
+ width: 15em;
+ background-color:azure;
+}
+.urlSubmit{
+  height: 4em;
+}
+
+.subText{
+  font-size: 0.7em;
+  font-weight: bold;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.bounding-box{
+  position:absolute;
+  box-shadow:0 0 0 3px #149df2 inset;
+  /* display: -webkit-box;
+  display: -ms-flexbox; */
+  display: flex;
+  /* -ms-fles-wrap: wrap; */
+  flex-wrap: wrap;
+  /* -webkit-box-pack:center;
+  -ms-flex-pack: center; */
+  justify-content: center;
+  cursor: pointer;
 }
