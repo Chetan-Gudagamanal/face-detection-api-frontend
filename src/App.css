@@ -29,12 +29,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Recursive:wght@500&display=swap');
 .welcome_msg{
   font-family: 'Recursive', sans-serif;
-  font-size: x-large;
+  font-size: xx-large;
+  color: #22287e;
 }
 
 .face_detect_msg{
   font-family: 'Recursive', sans-serif;
   font-size: large;
+  color: #45115e;
+}
+
+.face-detect-count{
+  font-size: xx-large;
 }
 
 .MyForm {
