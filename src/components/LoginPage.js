@@ -5,6 +5,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import * as Yup from "yup";
 import { useHistory } from "react-router-dom";
 import Button from '@material-ui/core/Button';
+import { url } from "../constants";
 // import Container from '@material-ui/core/Container';
 
 export default function LoginPage({setCurrentUserFaceDetectCount,setCurrentUserName,setCurrentUserId}) {
@@ -22,7 +23,7 @@ export default function LoginPage({setCurrentUserFaceDetectCount,setCurrentUserN
   } = useForm({ resolver: yupResolver(validationSchema) });
 
   const onSubmit = async(data) => {
-    const rawData=await fetch("https://face-detection-backend-server.herokuapp.com/login",
+    const rawData=await fetch(`${url}/login`,
     {
       method:"POST",
       headers:{"content-type":"application/json"},

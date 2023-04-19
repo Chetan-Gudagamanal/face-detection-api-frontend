@@ -3,6 +3,7 @@ import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import { Container } from "@material-ui/core";
 import Card from '@material-ui/core/Card';
+import { url } from "../constants";
 
 export default function ImageForm({setBox,setImageLink,setCurrentUserFaceDetectCount,currentUserId}){
     const [inputText,setInputText]=useState("")
@@ -10,7 +11,7 @@ export default function ImageForm({setBox,setImageLink,setCurrentUserFaceDetectC
     const handleSubmit=async()=>{
         setImageLink(inputText)
         let urlObj={imageUrl:inputText}
-        const data=await fetch("https://face-detection-backend-server.herokuapp.com/image",
+        const data=await fetch(`${url}/image`,
             {
                 method:"POST",
                 headers:{"content-type":"application/json"},
@@ -20,12 +21,12 @@ export default function ImageForm({setBox,setImageLink,setCurrentUserFaceDetectC
         const jsonData=await data.json()
         .then(jsonData=>{
             console.log(jsonData)
-            const faceData=jsonData.outputs[0].data.regions[0].region_info.bounding_box
+            const faceData=jsonData?.outputs[0]?.data?.regions[0]?.region_info?.bounding_box
             calculateFaceLocation(faceData)
         })
         
         
-        const rawData=await fetch(`https://face-detection-backend-server.herokuapp.com/image/${currentUserId}`,{
+        const rawData=await fetch(`${url}/image/${currentUserId}`,{
             method:"PUT"
         })
         const jsonData2=await rawData.json()

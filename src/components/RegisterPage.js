@@ -6,6 +6,7 @@ import * as Yup from "yup";
 // import Container from '@material-ui/core/Container';
 import { useHistory } from "react-router-dom";
 import Button from '@material-ui/core/Button';
+import { url } from "../constants";
 
 export default function RegisterPage() {
   const history=useHistory()
@@ -25,7 +26,7 @@ export default function RegisterPage() {
   } = useForm({ resolver: yupResolver(validationSchema) });
 
   const onSubmit = async(data) => {
-    let rawData=await fetch("https://face-detection-backend-server.herokuapp.com/register",{
+    let rawData=await fetch(`${url}/register`,{
       method:"POST",
       headers:{"content-type":"application/json"},
       body:JSON.stringify(data)
